@@ -35,12 +35,7 @@ export class AppComponent {
     });
   }
 
-  // async hideSplashScreen() 
-  // {
-  //   setTimeout(async () => {
-  //     await SplashScreen.hide();
-  //   }, 3000); // delay for 3 seconds (3000 milliseconds)
-  // }
+ 
 
 
   

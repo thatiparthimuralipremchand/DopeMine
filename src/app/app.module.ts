@@ -15,6 +15,10 @@ import { Router } from "@angular/router";
 import { Integrations } from "@sentry/tracing";
 import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
+import { AuthVerifiedComponent } from './greetings/auth-verified.component';
+import { AuthProcessingComponent } from './cake/auth-processing.component';
+import { AuthLandingComponent } from './wish/auth-landing.component';
+import { DopeButterflyComponent } from './dope-butterfly/dope-butterfly.component';
 
 
 
@@ -25,7 +29,10 @@ import { IonicModule } from '@ionic/angular';
 @NgModule({
   declarations: [
     AppComponent,
-
+    AuthVerifiedComponent,
+    AuthProcessingComponent,
+    AuthLandingComponent,
+    DopeButterflyComponent
   ],
   imports: [
 

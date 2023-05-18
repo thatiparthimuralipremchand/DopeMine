@@ -1,33 +1,19 @@
-// Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: MIT-0
-
-import { Component, OnInit, ChangeDetectionStrategy, HostListener } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { FormGroup, FormControl } from '@angular/forms';
-import { environment } from 'src/environments/environment';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AnyNaptrRecord } from 'dns';
-import { HttpClient } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
 import { CloudData, CloudOptions } from 'angular-tag-cloud-module';
 
-
-
 @Component({
-  selector: 'app-auth-processing',
-  templateUrl: './auth-processing.component.html',
-  styleUrls: ['./auth-processing.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'app-auth-verified',
+  templateUrl: './auth-verified.component.html',
+  styleUrls: ['./auth-verified.component.css']
 })
-export class AuthProcessingComponent implements OnInit {
-
+export class AuthVerifiedComponent implements OnInit {
 
 
     
   options: CloudOptions = {
-    height: 350,
-    width:800,
+    height: 700,
+    width:1500,
     overflow: false,
     font:'Candara',
     zoomOnHover: {
@@ -246,58 +232,20 @@ randomData(cnt?: number): CloudData[] {
 }
 
 
-  gmail:any;
-  sms:any;
-  logoutdata:string='';
-  existUser:string='';
+variablee:any;
+variablee2:any;
+emailid:any;
+phoneId:any;
 
-  verify:boolean=false;
-  progressing:boolean=true;
-  EmailVerify:boolean=false;
-  PhoneNumberverify:boolean=false
-////////////////////////////////////////////////////////////////////////////////////////
-  private userDetails_ = new BehaviorSubject(undefined);
-  public userDetails = this.userDetails_.asObservable();
-  public userDetailsForm = new FormGroup({});
-  private busy_ = new BehaviorSubject(true);
-  public busy = this.busy_.asObservable();
-  private errorMessage_ = new BehaviorSubject('');
-  public errorMessage = this.errorMessage_.asObservable();
-  existUser1: string='';
-////////////////////////////////////////////////////////////////////////////////////////
-  constructor(private router:Router ,private http:HttpClient) { 
-   this.gmail=sessionStorage.getItem('Email');
-   this.sms=sessionStorage.getItem('sms');
-
-      //  this.auth.getExistUser(gmail).subscribe((res:any)=>{
-      //   this.existUser=res;
-      //   console.log('yrh',this.existUser);
-      // })
-      // this.getusers();
-      //  this.getUserDetails();
-      
-  }
-
-  ngOnInit() {  
+  constructor(private router:Router) { 
+    this.variablee=sessionStorage.getItem('Email');
+    this.variablee2=sessionStorage.getItem('sms');
 
   }
-// getusers(){
-//   this.auth.getExistUser(this.gmail).subscribe((res:any)=>{
-//     this.existUser=res;
-//     console.log('yrh',this.existUser);
-//   })
-// }
 
+  ngOnInit(): void {
+  }
 
-
- 
-  // async siginOut(){
-  //   await this.auth.signOut();
-  //   localStorage.removeItem('fromjobcheck');
-  //   localStorage.clear();
-  //   sessionStorage.clear();
-  //   this.router.navigate(['/sign-in']);
-  // }
 
 
 }
